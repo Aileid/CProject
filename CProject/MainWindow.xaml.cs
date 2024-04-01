@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +23,44 @@ namespace CProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connectionString;
-        SqlDataAdapter adapter;
-        DataTable phonesTable;
-
+        Context db;
         public MainWindow()
         {
             InitializeComponent();
+
+            db = new Context();
+            db.Organizations.Load();
+            db.Employees.Load(); // загружаем данные
+            phonesGrid.ItemsSource = db.Organizations.Local.ToBindingList(); // устанавливаем привязку к кэшу
+
+            this.Closing += MainWindow_Closing;
+        }
+
+
+    private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+        db.Dispose();
+    }
+
+    private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            db.SaveChanges();
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (phonesGrid.SelectedItems.Count > 0)
+            {
+                for (int i = 0; i < phonesGrid.SelectedItems.Count; i++)
+                {
+                    //Employe employe = phonesGrid.SelectedItems[i] as Employe;
+                    //if (employe != null)
+                    //{
+                        //db.Employees.Remove(employe);
+                    //}
+                }
+            }
+            db.SaveChanges();
         }
     }
 }
