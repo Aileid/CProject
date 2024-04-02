@@ -29,11 +29,13 @@ namespace CProject
         public EmployeWindow()
         {
             bd.Organizations.Load();
-            organizations = bd.Organizations.Local.ToObservableCollection();//new ObservableCollection<Organization>();// bd.Organizations.Local.ToDictionary();
+            organizations = bd.Organizations.Local.ToObservableCollection();
 
             InitializeComponent();
 
             this.DataContext = this;
+
+            this.Closing += EmployeWindow_Closing;
         }
 
         void OkAction(object sender, RoutedEventArgs e)
@@ -65,6 +67,11 @@ namespace CProject
             }
 
             return DateTime.Now;
+        }
+
+        private void EmployeWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            bd.Dispose();
         }
     }
 }

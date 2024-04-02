@@ -22,26 +22,13 @@ namespace CProject
     {
         Context bd = new Context();
 
-        //public ICommand AddCategoryCommand { get; }
-
-        //public CategoryModel Categorys { get; set; }
-
-        // public ICommand OKCommand { get; }
-        // public ICommand CancelCommand { get; }
-
-        //  public IView View { get; }
-        //public CategoryBaseViewModel ViewModel => (CategoryBaseViewModel)this.DataContext;
-
         public OrganisationsWindow()
         {
             InitializeComponent();
-            //this.DataContext = new CategoryBaseViewModel(this);
+
+            this.Closing += OrganisationsWindow_Closing;
         }
 
-        public void CloseDialog(bool result)
-        {
-            
-        }
         public void OkAction(object sender, RoutedEventArgs e)
         {
             bd.Organizations.Add(new Organization() { name = OrgName.Text, inn = long.Parse(INN.Text), legal_adress = LegalAdd.Text, physical_adress = PhysAdd.Text });
@@ -54,6 +41,11 @@ namespace CProject
         {
             this.DialogResult = false;
             this.Close();
+        }
+
+        private void OrganisationsWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            bd.Dispose();
         }
 
     }

@@ -100,14 +100,7 @@ namespace CProject
             openFileDialog.Filter = "(*.csv)|*.csv";
             if (openFileDialog.ShowDialog() == true)
             {
-                //CsvHelper.Configuration.CsvConfiguration config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo. InvariantCulture);
-                //config.Encoding = Encoding.GetEncoding(1251);
-
-                //CsvParser csvParser = new CsvParser(new StreamReader(openFileDialog.FileName, Encoding.GetEncoding(1251)), config);
-                //CsvReader csvReader = new CsvReader(csvParser);
                 CsvReader csvReader = new CsvReader(new StreamReader(openFileDialog.FileName, Encoding.GetEncoding(1251)), CultureInfo.InvariantCulture);
-                //string[] headers = { };
-                //List<string[]> rows = new List<string[]>();
 
                 db.Employees.Load();
                 db.Organizations.Load();
@@ -116,7 +109,7 @@ namespace CProject
                 {
                     string[] row = csvReader.GetField(0).Split('|');
 
-                        Array a;
+                    Array a;
                     if(row.Length > 1)
                         if ((a = (from u in db.Organizations
                                   where u.name == row[4]

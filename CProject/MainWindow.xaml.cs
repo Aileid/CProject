@@ -29,45 +29,14 @@ namespace CProject
             InitializeComponent();
 
             this.DataContext = new MainViewModel();
-            //db = new Context();
 
-
-            //var employes = from u in db.Employees
-            //join c in db.Organizations on u.organization_id equals c.id
-            //select new { Name = u.name, Subname = u.surname, Patronymic = u.patronymic, Birth_date = u.birth_date, Organization = c.name, Inn = c.inn, Legal_adress = c.legal_adress, Physical_adress = c.physical_adress, Passport_number = u.passport_number, Passport_series = u.passport_series };
-
-            //db.Organizations.Load();
-            //db.Employees.Load(); // загружаем данные
-            //employesGrid.ItemsSource = employes.ToList(); //db.Organizations.Local.ToBindingList(); // устанавливаем привязку к кэшу
-
-            //this.Closing += MainWindow_Closing;
+            this.Closing += MainWindow_Closing;
         }
 
 
-    private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-    {
-        db.Dispose();
-    }
-
-    private void updateButton_Click(object sender, RoutedEventArgs e)
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            db.SaveChanges();
-        }
-
-        private void deleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (employesGrid.SelectedItems.Count > 0)
-            {
-                for (int i = 0; i < employesGrid.SelectedItems.Count; i++)
-                {
-                    //Employe employe = phonesGrid.SelectedItems[i] as Employe;
-                    //if (employe != null)
-                    //{
-                        //db.Employees.Remove(employe);
-                    //}
-                }
-            }
-            db.SaveChanges();
+            db.Dispose();
         }
     }
 }

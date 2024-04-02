@@ -4,12 +4,6 @@ namespace CProject
 {
     public partial class Context : DbContext
     {
-        
-
-        /*public Context() : base("Data Source=.\\SQLEXPRESS;Initial Catalog=CPROJECT;Integrated Security=False;Password=admin;User ID=admin")
-        {
-
-        }*/
         public Context()
         {
         }
