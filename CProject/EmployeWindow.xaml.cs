@@ -34,10 +34,9 @@ namespace CProject
             InitializeComponent();
 
             this.DataContext = this;
-
         }
 
-        public void OkAction(object sender, RoutedEventArgs e)
+        void OkAction(object sender, RoutedEventArgs e)
         {
             bd.Employees.Add(new Employee() { organization_id = int.Parse(OrganizationId.SelectedValue.ToString()), birth_date = ConvertDate(BirthDate.Text), name = Name.Text, surname = Subname.Text, patronymic = Patronymic.Text, passport_number = int.Parse(PassportNumber.Text), passport_series = int.Parse(PassportSeries.Text)});
             bd.SaveChanges();
@@ -45,13 +44,13 @@ namespace CProject
             this.Close();
         }
 
-        public void CancelAction(object sender, RoutedEventArgs e)
+        void CancelAction(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             this.Close();
         }
 
-        public DateTime ConvertDate(string value)
+        DateTime ConvertDate(string value)
         {
             DateTime dt;
 
@@ -64,7 +63,6 @@ namespace CProject
                     return dt;
                 }
             }
-
 
             return DateTime.Now;
         }
