@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JBMOQ6N+lzjVyllRCkxz2H9PojjHcKuWSOFXMkd/ojiAAKq0e7TJPS6PJwURC/Z1g1Jcx5aDiVDlZAqEEj2vAw==",
+  "dgSpecHash": "L39xJ0cKBKswzBMe1QbG/FSAs/T4TOrcClsh8uuStEXHX1onU4fy3G+85nEJ5vn397uuQT6gLW9cJU267DyPyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\pasha.DESKTOP-I2UKA3T\\source\\repos\\CProject\\CProject\\CProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pasha.DESKTOP-I2UKA3T\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\pasha.DESKTOP-I2UKA3T\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\pasha.DESKTOP-I2UKA3T\\.nuget\\packages\\csvhelper\\31.0.2\\csvhelper.31.0.2.nupkg.sha512",
     "C:\\Users\\pasha.DESKTOP-I2UKA3T\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\pasha.DESKTOP-I2UKA3T\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512",
     "C:\\Users\\pasha.DESKTOP-I2UKA3T\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

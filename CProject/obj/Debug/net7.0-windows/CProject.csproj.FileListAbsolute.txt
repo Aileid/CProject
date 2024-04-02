@@ -95,3 +95,6 @@ C:\Users\pasha.DESKTOP-I2UKA3T\source\repos\CProject\CProject\bin\Debug\net7.0-w
 C:\Users\pasha.DESKTOP-I2UKA3T\source\repos\CProject\CProject\bin\Debug\net7.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\pasha.DESKTOP-I2UKA3T\source\repos\CProject\CProject\bin\Debug\net7.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\pasha.DESKTOP-I2UKA3T\source\repos\CProject\CProject\bin\Debug\net7.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\pasha.DESKTOP-I2UKA3T\source\repos\CProject\CProject\obj\Debug\net7.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\pasha.DESKTOP-I2UKA3T\source\repos\CProject\CProject\obj\Debug\net7.0-windows\CProject.csproj.ResolveComReference.cache
+C:\Users\pasha.DESKTOP-I2UKA3T\source\repos\CProject\CProject\bin\Debug\net7.0-windows\CsvHelper.dll

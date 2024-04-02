@@ -23,7 +23,8 @@
                 <MenuItem Header="Файл">
                     <MenuItem Header="Добавить сотрудника" Command="{Binding AddEmployeCommand, Mode=OneTime}"></MenuItem>
                     <MenuItem Header="Добавить организацию" Command="{Binding AddOrganizationCommand, Mode=OneTime}"></MenuItem>
-                    <MenuItem Header="Сформировать Excel по товарам" Command="{Binding FormGoodsExcelCommand, Mode=OneTime}"></MenuItem>
+                    <MenuItem Header="Експорт Csv" Command="{Binding ExportToCsvCommand, Mode=OneTime}"></MenuItem>
+                    <MenuItem Header="Импорт Csv" Command="{Binding ImportFromCsvCommand, Mode=OneTime}"></MenuItem>
                 </MenuItem>
             </Menu>
 
