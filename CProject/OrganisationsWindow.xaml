@@ -1,0 +1,67 @@
+﻿<Window x:Class="CProject.OrganisationsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CProject"
+        mc:Ignorable="d"
+        Title="Добавление организации" Height="300" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Название организации" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="OrgName" MaxLength="60" VerticalContentAlignment="Center" Height="26" Width="Auto" Margin="10,10,10,0" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Content="ИНН организации" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Top" Width="146" Grid.Row="1"/>
+        <TextBox x:Name="INN" Grid.Row="1"  MaxLength="12" VerticalContentAlignment="Center" Height="26" Width="Auto" Margin="10,10,10,0" VerticalAlignment="Top"  Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Cost" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Content="Юр. адрес организации" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Top" Width="146" Grid.Row="2"/>
+        <TextBox x:Name="LegalAdd" MaxLength="100" VerticalContentAlignment="Center" Height="26" Width="Auto" Margin="10,10,10,0" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Content="Физ. адрес организации" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Top" Width="146" Grid.Row="3"/>
+        <TextBox x:Name="PhysAdd" MaxLength="100" VerticalContentAlignment="Center" Height="26" Width="Auto" Margin="10,10,10,0" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
+            <Button Click="OkAction" 
+                Content="Добавить" IsDefault="True" HorizontalAlignment="Right" Margin="0,0,91,10" VerticalAlignment="Bottom" Width="76"/>
+            <Button Click="CancelAction" Content="Отмена" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="76"/>
+        </StackPanel>
+    </Grid>
+</Window>

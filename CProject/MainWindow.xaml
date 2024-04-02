@@ -15,21 +15,32 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" x:Name="phonesGrid">
+        <DockPanel  Grid.Column="0" >
+            <Menu Grid.ColumnSpan="1" Width="auto">
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Добавить сотрудника" Command="{Binding AddEmployeCommand, Mode=OneTime}"></MenuItem>
+                    <MenuItem Header="Добавить организацию" Command="{Binding AddOrganizationCommand, Mode=OneTime}"></MenuItem>
+                    <MenuItem Header="Сформировать Excel по товарам" Command="{Binding FormGoodsExcelCommand, Mode=OneTime}"></MenuItem>
+                </MenuItem>
+            </Menu>
+
+        </DockPanel>
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" x:Name="employesGrid" ItemsSource="{Binding Employes}">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding name}" Header="Модель" Width="120"/>
-                <DataGridTextColumn Binding="{Binding inn}" Header="Производитель" Width="125"/>
-                <DataGridTextColumn Binding="{Binding legal_adress}" Header="Цена" Width="80"/>
-                <DataGridTextColumn Binding="{Binding physical_adress}" Header="Цена" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Subname}" Header="Фамилия" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Patronymic}" Header="Отчество" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Birth_date}" Header="Дата рождения" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Passport_series}" Header="Серия паспорта" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Passport_number}" Header="Номер паспорта" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Organization}" Header="Организация" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Inn}" Header="ИНН" Width="125"/>
+                <DataGridTextColumn Binding="{Binding Legal_adress}" Header="Юр. адрес" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Physical_adress}" Header="Физ. адрес" Width="80"/>
             </DataGrid.Columns>
         </DataGrid>
-
-        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
-            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
-            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
-        </StackPanel>
     </Grid>
 </Window>

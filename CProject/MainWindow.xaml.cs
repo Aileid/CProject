@@ -28,12 +28,19 @@ namespace CProject
         {
             InitializeComponent();
 
-            db = new Context();
-            db.Organizations.Load();
-            db.Employees.Load(); // загружаем данные
-            phonesGrid.ItemsSource = db.Organizations.Local.ToBindingList(); // устанавливаем привязку к кэшу
+            this.DataContext = new MainViewModel();
+            //db = new Context();
 
-            this.Closing += MainWindow_Closing;
+
+            //var employes = from u in db.Employees
+            //join c in db.Organizations on u.organization_id equals c.id
+            //select new { Name = u.name, Subname = u.surname, Patronymic = u.patronymic, Birth_date = u.birth_date, Organization = c.name, Inn = c.inn, Legal_adress = c.legal_adress, Physical_adress = c.physical_adress, Passport_number = u.passport_number, Passport_series = u.passport_series };
+
+            //db.Organizations.Load();
+            //db.Employees.Load(); // загружаем данные
+            //employesGrid.ItemsSource = employes.ToList(); //db.Organizations.Local.ToBindingList(); // устанавливаем привязку к кэшу
+
+            //this.Closing += MainWindow_Closing;
         }
 
 
@@ -49,9 +56,9 @@ namespace CProject
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (phonesGrid.SelectedItems.Count > 0)
+            if (employesGrid.SelectedItems.Count > 0)
             {
-                for (int i = 0; i < phonesGrid.SelectedItems.Count; i++)
+                for (int i = 0; i < employesGrid.SelectedItems.Count; i++)
                 {
                     //Employe employe = phonesGrid.SelectedItems[i] as Employe;
                     //if (employe != null)
